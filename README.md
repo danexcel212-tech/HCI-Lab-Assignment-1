@@ -4,7 +4,6 @@ Welcome to the repository for my personal portfolio website! This project was bu
 
 ## 🛠️ Built With
 * **Semantic HTML5** - For clean, structured, and accessible markup.
-* **CSS3 (Flexbox & Media Queries)** - For styling, custom layouts, and full mobile/tablet responsiveness.
 
 ## ✨ Features
 * **Hero Section:** Featuring a custom layout introducing my background.
