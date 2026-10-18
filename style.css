@@ -1,0 +1,219 @@
+
+body {
+    margin: 0;
+    font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+header {
+    background-color: A14646;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 0px;
+}
+
+.herosection {
+    background-color: EB895B;
+    height: 400px;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+}
+
+.secondsection {
+    display: flex;
+    flex-direction: row;
+}
+
+.about_me_section {
+    border: solid black 3px;
+    padding: 2%;
+    width: 50%;
+    background-color: #FDB773;
+}
+
+.skills_section {
+    border-top: solid black 3px;
+    border-bottom: solid black 3px;
+    border-right: solid black 3px;
+    padding: 2%;
+    width: 50%;
+    background-color: #FDB773;
+}
+
+.heroimage {
+    object-fit: cover;
+    height: 400px;
+    width: auto;
+    display: block;
+}
+
+.herotextcontainer {
+    font-size: 3rem;
+    color: aliceblue;
+}
+
+.herotext {
+    margin-left: 2%;
+    margin-bottom: 0;
+}
+
+.herotextmiddle {
+    margin-left: 2%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.nametitle {
+    color: aliceblue;
+    margin-bottom: 0px;
+    margin-left: 5%;
+}
+
+.subtitle {
+    margin-left: 5%;
+    color: aliceblue;
+    margin-top: 0px;
+}
+
+.thirdsection {
+    overflow: hidden;
+    display: flex;
+    background-color: aliceblue;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.projecttitle {
+    padding: 2%;
+    font-size: 2rem;
+}
+
+.projectimagecontainer {
+    padding: 5%;
+}
+
+.projectimage {
+    object-fit: cover;
+    height: 350px;
+    width: auto;
+}
+
+.fourthsection {
+    overflow: hidden;
+    background-color: #A14646;
+    display: flex;
+    flex-direction: column;
+}
+
+.linkdivider {
+    align-items: center;
+    justify-content: space-around;
+    display: flex;
+    flex-direction: row;
+}
+
+.linklogo {
+    margin: 5px;
+    height: 50px;
+    width: auto;
+}
+
+footer {
+    background-color: #222222;
+    color: #ffffff;
+    padding: 30px 5%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-content p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #cccccc;
+}
+
+
+@media screen and (max-width: 1024px) {
+    .herotext {
+        font-size: 2.3rem;
+    }
+
+    .heroimage {
+        height: 320px;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    
+
+    .herosection {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+        padding-top: 30px;
+        gap: 20px;
+    }
+
+    .herotextcontainer {
+        max-width: 100%;
+    }
+
+    .herotext {
+        font-size: 2rem;
+    }
+
+    .herotextmiddle {
+        font-size: 1rem;
+    }
+
+    .heroimage {
+        height: 280px;
+        align-self: center; 
+    }
+
+    
+    .secondsection {
+        flex-direction: column;
+    }
+
+    .about_me_section, 
+    .skills_section {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .skills_section {
+        border-left: 3px solid black; 
+        border-top: none; 
+    }
+
+    .thirdsection {
+        flex-direction: column;
+        padding: 30px 5%;
+        text-align: center;
+    }
+
+    .projecttitle {
+        max-width: 100%;
+    }
+
+    .projectimage {
+        height: auto;
+        max-width: 100%;
+    }
+
+
+    .linkdivider {
+        justify-content: flex-start;
+    }
+}
