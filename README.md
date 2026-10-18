@@ -13,7 +13,7 @@ Welcome to the repository for my personal portfolio website! This project was bu
 * **Contact Links:** Quick access to my professional profiles and direct contact info.
 
 ## 🌐 Live Demo
-Check out the live portfolio website here: [Link to your deployed site]](https://danexcel212-tech.github.io/HCI-Lab-Assignment-1/)
+Check out the live portfolio website here: (https://danexcel212-tech.github.io/HCI-Lab-Assignment-1/)
 
 ## 👤 Author
 * **Daniel Excel**
