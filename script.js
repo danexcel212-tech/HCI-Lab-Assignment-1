@@ -216,6 +216,28 @@ if (carousel && slideList && carouselControls && carouselDots && carouselPrev &&
     syncTimer();
 }
 
+/* ---------- Hero background animation ---------- */
+const hero = document.querySelector('.hero');
+const bgToggle = document.getElementById('bg-toggle');
+
+function applyBgPaused(paused) {
+    hero.classList.toggle('bg-paused', paused);
+    bgToggle.classList.toggle('paused', paused);
+    bgToggle.setAttribute('aria-label', paused ? 'Play background animation' : 'Pause background animation');
+}
+
+if (hero && bgToggle) {
+    let savedPause = false;
+    try { savedPause = localStorage.getItem('bgPaused') === '1'; } catch (e) {}
+    applyBgPaused(savedPause);
+
+    bgToggle.addEventListener('click', () => {
+        const paused = !hero.classList.contains('bg-paused');
+        applyBgPaused(paused);
+        try { localStorage.setItem('bgPaused', paused ? '1' : '0'); } catch (e) {}
+    });
+}
+
 /* ---------- Page-level listeners ---------- */
 function onPageScroll() {
     updateToTop();

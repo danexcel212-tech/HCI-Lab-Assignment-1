@@ -210,6 +210,8 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
 
 /* ---------- Hero ---------- */
 .hero {
+    position: relative;
+    isolation: isolate; /* keeps the animated background behind the text */
     background: var(--ember);
     color: var(--ink);
     overflow: hidden;
@@ -220,7 +222,7 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
     grid-template-columns: 1fr;
     align-items: center;
     gap: 2.5rem;
-    padding: 3rem 0 3.5rem;
+    padding: 3rem 0 4.5rem; /* room for the pause button on phones */
     text-align: center;
 }
 
@@ -259,6 +261,109 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
 @keyframes rise {
     from { opacity: 0; transform: translateY(16px); }
     to { opacity: 1; transform: none; }
+}
+
+/* ---------- Hero animated background ---------- */
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* a checkerboard that drifts diagonally, strongest around the picture */
+.hero-pattern {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to top, #000 10%, transparent 85%);
+    mask-image: linear-gradient(to top, #000 10%, transparent 85%);
+}
+.hero-pattern::before {
+    content: "";
+    position: absolute;
+    inset: -80px; /* one tile of extra room, so the loop never shows an edge */
+    background: repeating-conic-gradient(rgba(255, 246, 234, 0.16) 0% 25%, transparent 0% 50%) 0 0 / 80px 80px;
+    will-change: transform;
+}
+
+/* floating shapes: outlines and fills use the page colors, so dark mode follows */
+.shape {
+    position: absolute;
+    opacity: 0.55;
+}
+.shape-square { top: 56%; left: 4%; width: 48px; height: 48px; background: var(--peach); border: 3px solid var(--ink); }
+.shape-ring { top: -56px; right: 8%; width: 110px; height: 110px; border: 3px solid var(--ink); border-radius: 50%; }
+.shape-dot { top: 62%; right: 5%; width: 20px; height: 20px; background: var(--maroon); border-radius: 50%; }
+.shape-triangle { bottom: 9%; left: 4%; width: 52px; height: 52px; fill: var(--peach); stroke: var(--ink); stroke-width: 1.5; stroke-linejoin: round; }
+.shape-plus { display: none; width: 40px; height: 40px; fill: none; stroke: var(--ink); stroke-width: 2.5; }
+.shape-square-small { display: none; width: 28px; height: 28px; background: var(--maroon); border: 3px solid var(--ink); }
+
+/* pause / play button for the background */
+.bg-toggle {
+    position: absolute;
+    right: 0.75rem;
+    bottom: 0.75rem;
+    z-index: 2;
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 2px solid var(--ink);
+    border-radius: 50%;
+    background: var(--cream);
+    color: var(--ink);
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+.bg-toggle:hover { background: var(--ink); color: var(--cream); }
+.bg-toggle svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+.bg-toggle .icon-play { display: none; fill: currentColor; stroke-width: 2; }
+.bg-toggle.paused .icon-play { display: block; }
+.bg-toggle.paused .icon-pause { display: none; }
+
+/* motion only for people who have not asked for less of it */
+@media (prefers-reduced-motion: no-preference) {
+    .hero-pattern::before { animation: pattern-drift 24s linear infinite; }
+
+    .shape { animation: float 9s ease-in-out infinite alternate; }
+    .shape-ring { animation-duration: 13s; animation-delay: -3s; }
+    .shape-dot { animation-duration: 7s; animation-delay: -5s; }
+    .shape-triangle { animation-duration: 11s; animation-delay: -6s; }
+    .shape-plus { animation-duration: 10s; animation-delay: -2s; }
+    .shape-square-small { animation-duration: 8s; animation-delay: -4s; }
+
+    /* the picture idles up and down, like a character in a game */
+    .hero-visual { animation: bob 5s ease-in-out infinite; }
+
+    .hero.bg-paused .hero-pattern::before,
+    .hero.bg-paused .shape,
+    .hero.bg-paused .hero-visual { animation-play-state: paused; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .bg-toggle { display: none; }
+}
+
+/* the loop moves by exactly one 80px tile, so it never jumps */
+@keyframes pattern-drift {
+    to { transform: translate(80px, 80px); }
+}
+@keyframes float {
+    from { transform: translateY(-10px) rotate(-6deg); }
+    to { transform: translateY(10px) rotate(6deg); }
+}
+@keyframes bob {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
 }
 
 /* ---------- Buttons ---------- */
@@ -614,6 +719,17 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
     .hero-roles { margin-inline: 0; }
     .hero-actions { justify-content: flex-start; }
     .hero-image { max-width: 380px; box-shadow: 12px 12px 0 var(--maroon); }
+
+    .hero-pattern {
+        -webkit-mask-image: linear-gradient(to left, #000 15%, transparent 90%);
+        mask-image: linear-gradient(to left, #000 15%, transparent 90%);
+    }
+    .shape-square { top: 9%; width: 64px; height: 64px; }
+    .shape-ring { top: -36px; }
+    .shape-dot { top: 40%; }
+    .shape-triangle { width: 64px; height: 64px; }
+    .shape-plus { display: block; bottom: 10%; left: 47%; }
+    .shape-square-small { display: block; bottom: 24%; right: 3%; }
 
     .section { padding: 5rem 0; }
     .split { grid-template-columns: 1fr 2fr; gap: 2rem 4rem; }
