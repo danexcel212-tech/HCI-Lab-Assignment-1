@@ -251,3 +251,4 @@ function onPageResize() {
 window.addEventListener('scroll', onPageScroll, { passive: true });
 window.addEventListener('resize', onPageResize);
 onPageResize();
+

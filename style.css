@@ -745,3 +745,84 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
         border-left: 3px solid var(--ink);
     }
 }
+
+/* ---------- About Section GIF Animation ---------- */
+.about-container {
+    position: relative; /* Allows absolute positioning relative to this section */
+}
+
+.about-graphic {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    pointer-events: none; /* Lets clicks pass through the image */
+}
+
+.running-gif {
+    width: 64px; /* Adjust size as desired (pixel art looks best scaled crisply) */
+    height: auto;
+    image-rendering: pixelated; /* Keeps pixel art nice and sharp */
+}
+
+/* Adjust padding on the split container so text doesn't overlap the graphic on smaller screens */
+@media (max-width: 859px) {
+    .about-container {
+        padding-bottom: 5rem; /* Make room for the GIF on mobile */
+    }
+}
+
+/* ---------- About Section GIF Animation ---------- */
+.about-section {
+    position: relative; /* Anchors the absolute positioning to the whole section */
+}
+
+.about-graphic {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    pointer-events: none; /* Lets mouse clicks pass right through it */
+}
+
+.running-gif {
+    width: 64px; /* Adjust size as needed */
+    height: auto;
+    image-rendering: pixelated; /* Keeps pixel art crisp */
+}
+
+/* ---------- About Section GIF Animation ---------- */
+.about-section {
+    position: relative;
+    overflow: hidden; /* Prevents a horizontal scrollbar when the character walks off-screen */
+}
+
+.about-graphic {
+    position: absolute;
+    bottom: 0.75rem;
+    left: 0;
+    pointer-events: none;
+}
+
+.running-gif {
+    width: 64px;
+    height: auto;
+    image-rendering: pixelated;
+}
+
+/* Only animate if the user hasn't requested reduced motion */
+@media (prefers-reduced-motion: no-preference) {
+    .about-graphic {
+        /* 12s controls walking speed (higher = slower, lower = faster) */
+        animation: run-across 12s linear infinite;
+    }
+}
+
+@keyframes run-across {
+    0% {
+        /* Starts completely off-screen to the left */
+        transform: translateX(-100%);
+    }
+    100% {
+        /* Walks all the way across the viewport width (100vw) and disappears off the right edge */
+        transform: translateX(100vw);
+    }
+}
