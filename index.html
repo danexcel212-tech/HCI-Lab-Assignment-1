@@ -3,81 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Daniel Excel | Website Designer, CS Student & Game Developer</title>
+    <meta name="description" content="Portfolio of Daniel Excel, a Computer Science student at BINUS International University who designs websites and builds games in Godot.">
+    <meta name="theme-color" content="#A14646">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Daniel Excel | Website Designer, CS Student &amp; Game Developer">
+    <meta property="og:description" content="Computer Science student at BINUS International University. Websites, games and Godot projects.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23A14646'/%3E%3Ctext x='32' y='46' font-size='38' font-family='Arial' font-weight='700' text-anchor='middle' fill='white'%3ED%3C/text%3E%3C/svg%3E">
+    <script>try{document.documentElement.dataset.theme=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}catch(e){}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-    <header>
-        <h1 class="nametitle">Daniel Excel</h1>
-        <h4 class="subtitle">CSB30</h4>
-    </header>
-    <section class="herosection">
-        <div class="herotextcontainer">
-            <h1 class="herotext">Hello I'm Daniel</h1>
-            <p class="herotextmiddle">Website Designer / CS Student / Rookie Game Developer</p>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="#top">
+                <span class="brand-name">Daniel Excel</span>
+                <span class="brand-tag">CSB30</span>
+            </a>
+            <nav aria-label="Main">
+                <ul class="nav-list">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#journey">Journey</a></li>
+                    <li><a href="#project">Project</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><button type="button" class="theme-toggle" id="theme-toggle" aria-pressed="false">Dark mode</button></li>
+                </ul>
+            </nav>
         </div>
-        <img src="images/Gemini_Generated_Image_ofq0hdofq0hdofq0.png" alt="" class="heroimage">
-    </section>
+    </header>
 
-    <section class="secondsection">
-        <section class="about_me_section">
-            <h1>About Me</h1>
-            <p>i'm currently a CS student at BINUS INTERNATIONAL UNIVERSITY, although <br> im very new to HTML and CSS i'm still learning and i hope i get better in the future. <br> I've participated in several programing competition before including the IGGI Gamejam <br> and also OSN Informatika.</p>
+    <main id="main">
+        <section class="hero" id="top">
+            <div class="container hero-inner">
+                <div class="hero-text">
+                    <h1>Hello, I'm Daniel.</h1>
+                    <p class="hero-roles">Website designer, CS student and rookie game developer.</p>
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="#project">See my project</a>
+                        <a class="btn btn-ghost" href="#contact">Contact me</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <img src="images/Gemini_Generated_Image_ofq0hdofq0hdofq0.png" alt="Illustration of Daniel" class="hero-image">
+                </div>
+            </div>
         </section>
-        <section class="skills_section">
-            <h1>Skills</h1>
-            <ul>
-                <li>Python</li>
-                <li>C++</li>
-                <li>HTML & CSS</li>
-                <li>Godot</li>
-                <li>GDscipt</li>
-            </ul>
-        </section>
-    </section>
 
-    <section class="thirdsection">
-        <section class="projecttitle">
-            <h1>My Project</h1>
-            <p>this is one of my game that i developed when i was participating in IGGI Gamejam in highschool called "monkey-business". a simple clicker game made in Godot and coded with GDScript</p>
-            <a href="https://ddanxell212.itch.io/monkey-business">Click here to check it out!</a>
+        <section class="section" id="about">
+            <div class="container split">
+                <div>
+                    <h2>About me</h2>
+                </div>
+                <div class="prose">
+                    <p>I'm a Computer Science student at BINUS International University. I'm still new to HTML and CSS, and I'm learning more with every page I build.</p>
+                    <p>I've competed in several programming contests, including the IGGI Gamejam and OSN Informatika.</p>
+                </div>
+            </div>
         </section>
-        <section class="projectimagecontainer">
-            <img src="images/xAwlE9.png" alt="" class="projectimage">
-        </section>
-    </section>
 
-    <section class="fourthsection">
-        <h1 style="margin-left: 2%;">Contact me</h1>
-        <section class="linkdivider">
-            <section class="linkdivider">
-                <a href="https://www.instagram.com/dan.excel212?vrfl=YXU0aG93MmpwODc4">
-                    <img src="images/instagram-logo-instagram-logo-transparent-instagram-icon-transparent-free-free-png.webp" alt="" class="linklogo">
-                </a>
-                <p>instagram</p>
-            </section>
-            <section class="linkdivider">
-                <a href="https://github.com/danexcel212-tech">
-                    <img src="images/vecteezy_github-rectangular-icon-with-transparent-background-inside_74690086.png" alt="" class="linklogo">
-                </a>
-                <p>github</p>
-            </section>
-            <section class="linkdivider">
-                <img src="images/vecteezy_gmail-logo-solid-black-mail-app-icon_78311175.png" alt="" class="linklogo">
-                <p>dan.excel212@gmail.com</p>
-            </section>
-            <section class="linkdivider">
-                <img src="images/vecteezy_app-icon-style-whatsapp-black-and-white-logo-on-a_42127113.png" alt="" class="linklogo">
-                <p>+62 85771923029</p>
-            </section>
+        <section class="section section-tint" id="skills">
+            <div class="container split">
+                <div>
+                    <h2>Skills</h2>
+                </div>
+                <div class="skill-groups">
+                    <div>
+                        <h3>Languages</h3>
+                        <ul class="chips">
+                            <li>Python</li>
+                            <li>C++</li>
+                            <li>HTML &amp; CSS</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Game development</h3>
+                        <ul class="chips">
+                            <li>Godot</li>
+                            <li>GDScript</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </section>
-    </section>
 
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2026 Daniel Excel. Built with Semantic HTML & CSS.</p>
+        <section class="section" id="journey">
+            <div class="container split">
+                <div>
+                    <h2>Education &amp; competitions</h2>
+                </div>
+                <ul class="journey">
+                    <li>
+                        <h3>BINUS International University</h3>
+                        <p>Studying Computer Science.</p>
+                    </li>
+                    <li>
+                        <h3>IGGI Gamejam</h3>
+                        <p>Built Monkey Business, a clicker game in Godot, while in high school.</p>
+                    </li>
+                    <li>
+                        <h3>OSN Informatika</h3>
+                        <p>Competed in Indonesia's national informatics olympiad.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section section-tint" id="project">
+            <div class="container">
+                <h2>My project</h2>
+                <article class="project-card">
+                    <div class="project-body">
+                        <h3>Monkey Business</h3>
+                        <p>A simple clicker game I made for the IGGI Gamejam in high school. Built in Godot and written in GDScript.</p>
+                        <ul class="tags">
+                            <li>Godot</li>
+                            <li>GDScript</li>
+                            <li>Game jam</li>
+                        </ul>
+                        <a class="btn btn-primary" href="https://ddanxell212.itch.io/monkey-business" target="_blank" rel="noopener">Play on itch.io</a>
+                    </div>
+                    <img src="images/xAwlE9.png" alt="Screenshot of the Monkey Business clicker game" class="project-image" loading="lazy">
+                </article>
+            </div>
+        </section>
+
+        <section class="section contact" id="contact">
+            <div class="container">
+                <h2>Contact me</h2>
+                <p>Email is the quickest way to reach me. You can also find me on WhatsApp, GitHub and Instagram.</p>
+                <ul class="contact-list">
+                    <li>
+                        <a href="mailto:dan.excel212@gmail.com">
+                            <img src="images/vecteezy_gmail-logo-solid-black-mail-app-icon_78311175.png" alt="" class="contact-icon">
+                            <span><strong>Email</strong>dan.excel212@gmail.com</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://wa.me/6285771923029" target="_blank" rel="noopener">
+                            <img src="images/vecteezy_app-icon-style-whatsapp-black-and-white-logo-on-a_42127113.png" alt="" class="contact-icon">
+                            <span><strong>WhatsApp</strong>+62 857 7192 3029</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/danexcel212-tech" target="_blank" rel="noopener">
+                            <img src="images/vecteezy_github-rectangular-icon-with-transparent-background-inside_74690086.png" alt="" class="contact-icon">
+                            <span><strong>GitHub</strong>danexcel212-tech</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/dan.excel212?vrfl=YXU0aG93MmpwODc4" target="_blank" rel="noopener">
+                            <img src="images/instagram-logo-instagram-logo-transparent-instagram-icon-transparent-free-free-png.webp" alt="" class="contact-icon">
+                            <span><strong>Instagram</strong>@dan.excel212</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2026 Daniel Excel. Built with semantic HTML and CSS.</p>
         </div>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
